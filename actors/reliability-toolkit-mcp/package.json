@@ -10,5 +10,15 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
     "apify": "^3.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaudinbarki/apify-reliability-toolkit.git"
+  },
+  "homepage": "https://github.com/alaudinbarki/apify-reliability-toolkit#readme",
+  "bugs": {
+    "url": "https://github.com/alaudinbarki/apify-reliability-toolkit/issues"
+  },
+  "author": "Alaudin Barki",
+  "license": "MIT"
 }
