@@ -8,7 +8,7 @@
     "test": "for f in src/lib/*.test.mjs; do node \"$f\" || exit 1; done"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@modelcontextprotocol/sdk": "^1.31.0",
     "apify": "^3.2.0"
   },
   "repository": {
