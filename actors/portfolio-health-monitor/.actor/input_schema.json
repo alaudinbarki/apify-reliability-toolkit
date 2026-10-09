@@ -1,0 +1,74 @@
+{
+  "title": "Portfolio Health Monitor Input",
+  "description": "Which actors to smoke-test. With no input, checks this account's default fleet.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "auditPortfolio": {
+      "title": "Audit Actor maintenance metadata",
+      "type": "boolean",
+      "description": "Check Actor notices, public state, and deprecation state through the Apify API without launching the checked Actors.",
+      "editor": "checkbox",
+      "default": true,
+      "prefill": true
+    },
+    "actorIds": {
+      "title": "Actor IDs or names (optional)",
+      "type": "array",
+      "description": "Specific Actor IDs or user/name references to audit. Empty audits every Actor accessible in the current account.",
+      "editor": "stringList",
+      "default": []
+    },
+    "includePrivate": {
+      "title": "Include private Actors",
+      "type": "boolean",
+      "description": "Include private Actors when automatically discovering the portfolio.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "runSmokeChecks": {
+      "title": "Run active smoke checks",
+      "type": "boolean",
+      "description": "Launch the configured Actors with tiny inputs. Off by default to keep scheduled metadata audits cheap.",
+      "editor": "checkbox",
+      "default": false,
+      "prefill": false
+    },
+    "checks": {
+      "title": "Checks",
+      "type": "array",
+      "description": "Smoke checks: [{\"actorId\":\"user/actor\",\"input\":{...},\"expectMinItems\":1,\"timeoutSecs\":300}]. Empty = the built-in default fleet.",
+      "editor": "json",
+      "default": []
+    },
+    "concurrency": {
+      "title": "Concurrent checks",
+      "type": "integer",
+      "description": "How many smoke runs at once (1-4).",
+      "editor": "number",
+      "default": 2,
+      "prefill": 2,
+      "minimum": 1,
+      "maximum": 4
+    },
+    "memoryMbytes": {
+      "title": "Memory per smoke run (MB)",
+      "type": "integer",
+      "description": "Memory given to each checked actor's run.",
+      "editor": "number",
+      "default": 1024,
+      "prefill": 1024,
+      "minimum": 256,
+      "maximum": 4096
+    },
+    "failOnUnhealthy": {
+      "title": "Fail this run when the fleet is unhealthy",
+      "type": "boolean",
+      "description": "On (default): any maintenance notice, deprecated Actor, or unhealthy smoke check makes this run fail so Schedule notifications fire.",
+      "editor": "checkbox",
+      "default": true,
+      "prefill": false
+    }
+  },
+  "required": []
+}

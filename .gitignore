@@ -1,0 +1,11 @@
+node_modules/
+storage/
+build/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+apify_storage_key_value_store.json
+apify_dataset_*.json

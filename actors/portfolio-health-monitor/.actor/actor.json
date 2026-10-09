@@ -1,0 +1,138 @@
+{
+  "actorSpecification": 1,
+  "name": "portfolio-health-monitor",
+  "title": "Apify Portfolio Maintenance Watchdog",
+  "description": "Audits an Apify Actor portfolio for maintenance notices and deprecations, with optional active smoke tests. Produces per-Actor evidence and fails scheduled runs when the fleet needs attention.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "exampleRunInput": {
+    "auditPortfolio": true,
+    "includePrivate": false,
+    "runSmokeChecks": false,
+    "failOnUnhealthy": false
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "checkType",
+              "actorId",
+              "actorName",
+              "status",
+              "reason",
+              "notice",
+              "isPublic",
+              "runStatus",
+              "items",
+              "expectedMinItems",
+              "durationMs"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      },
+      "fields": {
+        "type": "object",
+        "properties": {
+          "checkType": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Check type"
+          },
+          "actorId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Actor Id"
+          },
+          "actorName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Actor name"
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Status"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Reason"
+          },
+          "notice": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Apify notice"
+          },
+          "isPublic": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "title": "Public"
+          },
+          "runStatus": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "Run Status"
+          },
+          "items": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "title": "Items"
+          },
+          "expectedMinItems": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "title": "Expected Min Items"
+          },
+          "durationMs": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "title": "Duration Ms"
+          }
+        }
+      }
+    }
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema",
+    "properties": {
+      "results": {
+        "title": "Results",
+        "description": "The dataset of results produced by this run.",
+        "template": "{{links.apiDefaultDatasetUrl}}/items",
+        "type": "string"
+      }
+    }
+  }
+}

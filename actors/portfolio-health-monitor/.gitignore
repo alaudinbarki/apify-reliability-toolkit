@@ -1,0 +1,5 @@
+node_modules/
+storage/
+.venv/
+apify_storage/
+crawlee_storage/

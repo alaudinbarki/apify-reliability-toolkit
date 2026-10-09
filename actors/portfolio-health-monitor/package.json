@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-health-monitor",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Audits an Apify Actor portfolio for maintenance notices with optional active smoke checks.",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "for f in src/lib/*.test.mjs; do node \"$f\" || exit 1; done"
+  },
+  "dependencies": {
+    "apify": "^3.2.0"
+  }
+}

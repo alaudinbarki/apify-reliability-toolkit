@@ -1,0 +1,14 @@
+{
+  "name": "reliability-toolkit-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MCP server exposing reliable Apify data tools to AI agents.",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "for f in src/lib/*.test.mjs; do node \"$f\" || exit 1; done"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "apify": "^3.2.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "name": "reliability-toolkit-mcp",
+  "title": "Reliability Toolkit \u2014 MCP Server",
+  "description": "An MCP server exposing reliable scraping and data tools (Amazon, email verify, leads, Google Trends, Product Hunt, prediction markets, and more) to Claude, Cursor, and AI agents. Each tool runs a maintained, tested Actor.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/",
+  "webServerMountPath": "/",
+  "meta": {
+    "templateId": "ts-standby"
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {},
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema",
+    "properties": {
+      "results": {
+        "title": "Results",
+        "description": "The dataset of results produced by this run.",
+        "template": "{{links.apiDefaultDatasetUrl}}/items",
+        "type": "string"
+      }
+    }
+  }
+}

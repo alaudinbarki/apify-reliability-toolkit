@@ -1,0 +1,7 @@
+{
+  "title": "Reliability Toolkit MCP Server",
+  "description": "This actor runs as an MCP server (Standby mode). Connect an MCP client to its URL — no start input is required. See the README for connection details.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {}
+}
