@@ -106,9 +106,12 @@ Both Actors follow the same rules, which is most of why they are dependable:
 
 ## Status
 
-Both Actors are deployed and tested on the free Apify plan. They are **not currently listed on the
-Apify Store** — public Store listing requires a paid plan. Everything here is MIT licensed, so you are
-free to self-host, fork, or deploy your own copy.
+Both Actors are deployed and tested, and both are **live on the Apify Store**:
+
+- [`alaudinburki/reliability-toolkit-mcp`](https://apify.com/alaudinburki/reliability-toolkit-mcp)
+- [`alaudinburki/portfolio-health-monitor`](https://apify.com/alaudinburki/portfolio-health-monitor)
+
+Everything here is MIT licensed, so you are free to self-host, fork, or deploy your own copy.
 
 ## License
 
